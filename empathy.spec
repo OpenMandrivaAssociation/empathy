@@ -13,6 +13,9 @@ BuildRequires: pkgconfig(gconf-2.0)
 BuildRequires: pkgconfig(libxml-2.0)
 BuildRequires: pkgconfig(libtelepathy)
 BuildRequires: pkgconfig(libmissioncontrol)
+BuildRequires: pkgconfig(gtk+-2.0)
+BuildRequires: pkgconfig(libglade-2.0)
+BuildRequires: pkgconfig(libgnomeui-2.0)
 BuildRequires: intltool
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
