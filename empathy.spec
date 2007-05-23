@@ -31,14 +31,19 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
 %find_lang %{name} --with-gnome
-#
-#desktop-file-install --vendor="" \
-#  --remove-category="Application" \
-#  --add-category="GTK" \
-#  --add-category="GNOME" \
-#  --add-category="X-MandrivaLinux-Internet-InstantMessaging" \
-#  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
-#
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
+cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=Empathy
+Comment=Instant messaging client
+Exec=%_bindir/empathy
+Icon=%{name}
+Terminal=false
+Type=Application
+Categories=X-MandrivaLinux-Internet-InstantMessaging;Network;InstantMessaging;
+EOF
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -60,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/gconf/schemas/*
 %_datadir/icons/hicolor/*/apps/*
 %_datadir/dbus-1/services/*
-
+%{_datadir}/applications//mandriva-%{name}.desktop
 %_bindir/*
 %_datadir/%{name}/*
 %_datadir/gnome/autostart/%{name}.desktop
