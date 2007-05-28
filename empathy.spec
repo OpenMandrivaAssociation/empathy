@@ -1,9 +1,7 @@
-# TODO add a menu file
-
 Summary: A IM client based on Telepathy framework
 Name: empathy
 Version: 0.5
-Release: %mkrel 1
+Release: %mkrel 2
 License: GPL
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
