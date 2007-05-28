@@ -20,13 +20,13 @@ BuildRequires: intltool
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 %description
-Empathy consists of a rich set of reusable instant messaging widgets, and a 
-GNOME client using those widgets. 
-It uses Telepathy and Nokia's Mission Control, and reuses Gossip's UI. 
-The main goal is to permit desktop integration by providing libempathy and 
-libempathy-gtk libraries. libempathy-gtk is a set of powerful widgets that 
-can be embeded into any GNOME application.
+Empathy consists of a rich set of reusable instant messaging widgets, as
+well as a GNOME client that uses those widgets.
 
+Empathy uses Telepathy and Nokia's Mission Control, and reuses Gossip's
+UI. Its main goal is to integrate instant messaging with the desktop by
+providing libempathy and libempathy-gtk libraries, a set of widgets that
+can be embeded into any GNOME application.
 %prep
 %setup -q
 
