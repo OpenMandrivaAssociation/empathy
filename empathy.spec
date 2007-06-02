@@ -1,7 +1,7 @@
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 0.5
-Release: %mkrel 2
+Version: 0.6
+Release: %mkrel 1
 License: GPL
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
@@ -51,7 +51,7 @@ Exec=%_bindir/empathy
 Icon=%{name}
 Terminal=false
 Type=Application
-Categories=X-MandrivaLinux-Internet-InstantMessaging;Network;InstantMessaging;
+Categories=Network;InstantMessaging;
 EOF
 
 %clean
@@ -75,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/gconf/schemas/*
 %_datadir/icons/hicolor/*/apps/*
 %_datadir/dbus-1/services/*
-%{_datadir}/applications//mandriva-%{name}.desktop
+%{_datadir}/applications/mandriva-%{name}.desktop
 %_bindir/*
 %_datadir/%{name}/*
 %_datadir/gnome/autostart/%{name}.desktop
