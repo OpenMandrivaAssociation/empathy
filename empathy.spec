@@ -118,7 +118,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/*.so
 %{_libdir}/*.la
 %{_libdir}/*.a
-%{_libdir}/pkconfig/*.pc
+%{_libdir}/pkgconfig/*.pc
 %{_includedir}/libempathy-gtk
 %{_includedir}/libempathy
 %{_datadir}/gtk-doc/html/libempathy-gtk
