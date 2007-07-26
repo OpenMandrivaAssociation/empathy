@@ -45,7 +45,7 @@ This package contains library files for %{name}.
 
 %package -n %{develname}
 Summary: Developement files for %{name}
-Group: Developement/GNOME and GTK+
+Group: Development/GNOME and GTK+
 Requires: %{libname} = %{version}-%{release}
 Provides: lib%{name}-devel = %{version}-%{release}
 Provides: %{name}-devel = %{version}-%{release}
