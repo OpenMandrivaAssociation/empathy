@@ -1,3 +1,6 @@
+%define libname %mklibname %name 0
+%define develname %mklibname -d %name
+
 Summary: A IM client based on Telepathy framework
 Name: empathy
 Version: 0.9
@@ -18,6 +21,7 @@ BuildRequires: intltool
 Requires: telepathy-mission-control
 # jabber by default, unless someone as a better idea
 Requires: telepathy-gabble
+Requires: %{libname} = %{version}-%{release}
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 %description
@@ -28,6 +32,27 @@ Empathy uses Telepathy and Nokia's Mission Control, and reuses Gossip's
 UI. Its main goal is to integrate instant messaging with the desktop by
 providing libempathy and libempathy-gtk libraries, a set of widgets that
 can be embeded into any GNOME application.
+
+%package -n %{libname}
+Summary: Libraries for %{name}
+Group: System/Libraries
+
+%description -n %{libname}
+This package contains library files for %{name}.
+
+%post -n %{libname} -p /sbin/ldconfig
+%postun -n %{libname} -p /sbin/ldconfig
+
+%package -n %{develname}
+Summary: Developement files for %{name}
+Group: Developement/GNOME and GTK+
+Requires: %{libname} = %{version}-%{release}
+Provides: lib%{name}-devel = %{version}-%{release}
+Provides: %{name}-devel = %{version}-%{release}
+
+%description -n %{develname}
+This package contains developement files for %{name}.
+
 %prep
 %setup -q
 
@@ -62,11 +87,13 @@ rm -rf $RPM_BUILD_ROOT
 %post
 %post_install_gconf_schemas %{schemas}
 %update_icon_cache hicolor
+%update_menus
 
 %preun
 %preun_uninstall_gconf_schemas %{schemas}
 
 %postun
+%clean_menus
 %clean_icon_cache hicolor
 
 %files -f %{name}.lang
@@ -81,3 +108,18 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/gnome/autostart/%{name}.desktop
 %_datadir/telepathy/managers/*
 %_datadir/mission-control/profiles/*
+
+%files -n %{libname}
+%defattr(-,root,root)
+%{_libdir}/*.so.*
+
+%files -n %{develname}
+%defattr(-,root,root)
+%{_libdir}/*.so
+%{_libdir}/*.la
+%{_libdir}/*.a
+%{_libdir}/pkconfig/*.pc
+%{_includedir}/libempathy-gtk
+%{_includedir}/libempathy
+%{_datadir}/gtk-doc/html/libempathy-gtk
+%{_datadir}/gtk-doc/html/libempathy
