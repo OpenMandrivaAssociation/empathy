@@ -18,6 +18,7 @@ BuildRequires: pkgconfig(gtk+-2.0)
 BuildRequires: pkgconfig(libglade-2.0)
 BuildRequires: pkgconfig(libgnomeui-2.0)
 BuildRequires: intltool
+BuildRequires: libgcrypt-devel
 Requires: telepathy-mission-control
 # jabber by default, unless someone as a better idea
 Requires: telepathy-gabble
