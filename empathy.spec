@@ -1,5 +1,7 @@
-%define major 1
+%define major 2
 %define libname %mklibname %name %major
+%define gtkmajor 1
+%define gtklibname %mklibname %name-gtk %gtkmajor
 %define develname %mklibname -d %name
 
 Summary: A IM client based on Telepathy framework
@@ -45,6 +47,17 @@ This package contains library files for %{name}.
 
 %post -n %{libname} -p /sbin/ldconfig
 %postun -n %{libname} -p /sbin/ldconfig
+
+%package -n %{gtklibname}
+Summary: Libraries for %{name}-gtk
+Group: System/Libraries
+Obsoletes: %mklibname %name 0
+
+%description -n %{gtklibname}
+This package contains library files for %{name}-gtk.
+
+%post -n %{gtklibname} -p /sbin/ldconfig
+%postun -n %{gtklibname} -p /sbin/ldconfig
 
 %package -n %{develname}
 Summary: Developement files for %{name}
@@ -114,7 +127,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n %{libname}
 %defattr(-,root,root)
-%{_libdir}/*.so.%{major}*
+%{_libdir}/libempathy.so.%{major}*
+
+%files -n %{gtklibname}
+%defattr(-,root,root)
+%{_libdir}/libempathy-gtk.so.%{gtkmajor}*
 
 %files -n %{develname}
 %defattr(-,root,root)
