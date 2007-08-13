@@ -1,9 +1,10 @@
-%define libname %mklibname %name 0
+%define major 1
+%define libname %mklibname %name %major
 %define develname %mklibname -d %name
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 0.10
+Version: 0.11
 Release: %mkrel 1
 License: GPL
 Group: Networking/Instant messaging
@@ -37,6 +38,7 @@ can be embeded into any GNOME application.
 %package -n %{libname}
 Summary: Libraries for %{name}
 Group: System/Libraries
+Obsoletes: %mklibname %name 0
 
 %description -n %{libname}
 This package contains library files for %{name}.
@@ -112,7 +114,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n %{libname}
 %defattr(-,root,root)
-%{_libdir}/*.so.*
+%{_libdir}/*.so.%{major}*
 
 %files -n %{develname}
 %defattr(-,root,root)
