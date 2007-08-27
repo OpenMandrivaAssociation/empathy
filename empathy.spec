@@ -7,7 +7,7 @@
 Summary: A IM client based on Telepathy framework
 Name: empathy
 Version: 0.12
-Release: %mkrel 1
+Release: %mkrel 2
 License: GPL
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
@@ -23,6 +23,7 @@ BuildRequires: pkgconfig(libgnomeui-2.0)
 BuildRequires: pkgconfig(libebook-1.2)
 BuildRequires: intltool
 BuildRequires: libgcrypt-devel
+BuildRequires: python-devel
 Requires: telepathy-mission-control
 # jabber by default, unless someone as a better idea
 Requires: telepathy-gabble
@@ -73,9 +74,11 @@ This package contains developement files for %{name}.
 %prep
 %setup -q
 
+# remove once http://bugzilla.gnome.org/show_bug.cgi?id=470642 is fixed
+perl -pi -e 's/`pyversions -d`/python%python_version/' python/pyempathy*/Makefile*
+
 %build
-# remove them for the moment
-%configure2_5x --enable-python=no
+%configure2_5x --enable-python=yes --enable-aspell=yes
 
 %make
 
@@ -96,6 +99,8 @@ Terminal=false
 Type=Application
 Categories=Network;InstantMessaging;
 EOF
+
+rm -Rf $RPM_BUILD_ROOT/%python_sitelib/*.{a,la}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -126,6 +131,7 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/gnome/autostart/%{name}.desktop
 %_datadir/telepathy/managers/*
 %_datadir/mission-control/profiles/*
+%python_sitelib/*so
 
 %files -n %{libname}
 %defattr(-,root,root)
