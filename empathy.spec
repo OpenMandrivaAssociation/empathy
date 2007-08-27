@@ -6,7 +6,7 @@
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 0.11
+Version: 0.12
 Release: %mkrel 1
 License: GPL
 Group: Networking/Instant messaging
@@ -20,6 +20,7 @@ BuildRequires: pkgconfig(libmissioncontrol)
 BuildRequires: pkgconfig(gtk+-2.0)
 BuildRequires: pkgconfig(libglade-2.0)
 BuildRequires: pkgconfig(libgnomeui-2.0)
+BuildRequires: pkgconfig(libebook-1.2)
 BuildRequires: intltool
 BuildRequires: libgcrypt-devel
 Requires: telepathy-mission-control
@@ -73,7 +74,8 @@ This package contains developement files for %{name}.
 %setup -q
 
 %build
-%configure2_5x
+# remove them for the moment
+%configure2_5x --enable-python=no
 
 %make
 
