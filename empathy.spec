@@ -23,7 +23,12 @@ BuildRequires: pkgconfig(libgnomeui-2.0)
 BuildRequires: pkgconfig(libebook-1.2)
 BuildRequires: intltool
 BuildRequires: libgcrypt-devel
+# required by aspell
+BuildRequires: iso-codes
+BuildRequires: devel(libaspell)
+# for python binding
 BuildRequires: python-devel
+BuildRequires: pkgconfig(pygtk-2.0)
 Requires: telepathy-mission-control
 # jabber by default, unless someone as a better idea
 Requires: telepathy-gabble
