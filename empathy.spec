@@ -25,7 +25,7 @@ BuildRequires: intltool
 BuildRequires: libgcrypt-devel
 # required by aspell
 BuildRequires: iso-codes
-BuildRequires: devel(libaspell)
+BuildRequires: aspell-devel
 # for python binding
 BuildRequires: python-devel
 BuildRequires: pkgconfig(pygtk-2.0)
