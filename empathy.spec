@@ -1,6 +1,6 @@
-%define major 2
+%define major 3
 %define libname %mklibname %name %major
-%define gtkmajor 1
+%define gtkmajor 4
 %define gtklibname %mklibname %name-gtk %gtkmajor
 %define develname %mklibname -d %name
 
