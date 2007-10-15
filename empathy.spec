@@ -136,7 +136,8 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/telepathy/managers/*
 %_datadir/mission-control/profiles/*
 %python_sitelib/*so
-
+%_libdir/megaphone-applet
+%_libdir/bonobo/servers/GNOME_Megaphone_Applet.server
 %files -n %{libname}
 %defattr(-,root,root)
 %{_libdir}/libempathy.so.%{major}*
