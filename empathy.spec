@@ -7,7 +7,7 @@
 Summary: A IM client based on Telepathy framework
 Name: empathy
 Version: 0.14
-Release: %mkrel 1
+Release: %mkrel 2
 License: GPL
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
@@ -78,6 +78,13 @@ Provides: %{name}-devel = %{version}-%{release}
 %description -n %{develname}
 This package contains developement files for %{name}.
 
+%package -n python-%name
+Summary: Python module for %{name}
+Group: Development/Python
+
+%description -n python-%name
+This package contains the python module for %{name}.
+
 %prep
 %setup -q
 
@@ -138,10 +145,13 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/telepathy/managers/*
 %_datadir/mission-control/profiles/*
 
-%py_platsitedir/*so
 
 %_libdir/megaphone-applet
 %_libdir/bonobo/servers/GNOME_Megaphone_Applet.server
+
+%files -n python-%{name}
+%defattr(-,root,root)
+%py_platsitedir/*so
 
 %files -n %{libname}
 %defattr(-,root,root)
