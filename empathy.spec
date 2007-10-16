@@ -106,7 +106,7 @@ Type=Application
 Categories=Network;InstantMessaging;
 EOF
 
-rm -Rf $RPM_BUILD_ROOT/%python_sitelib/*.{a,la}
+rm -Rf $RPM_BUILD_ROOT/%py_platsitedir/*.{a,la}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -139,8 +139,6 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/mission-control/profiles/*
 
 %py_platsitedir/*so
-%py_platsitedir/*la
-%py_platsitedir/*a
 
 %_libdir/megaphone-applet
 %_libdir/bonobo/servers/GNOME_Megaphone_Applet.server
