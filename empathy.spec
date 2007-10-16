@@ -92,7 +92,7 @@ This package contains the python module for %{name}.
 perl -pi -e 's/`pyversions -d`/python%python_version/' python/pyempathy*/Makefile*
 
 %build
-%configure2_5x --enable-python=yes --enable-aspell=yes
+%configure2_5x --enable-python=yes --enable-aspell=yes --enable-nothere=yes
 
 %make
 
@@ -148,6 +148,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %_libdir/megaphone-applet
 %_libdir/bonobo/servers/GNOME_Megaphone_Applet.server
+%_libdir/bonobo/servers/GNOME_NotHere_Applet.server
+%_libdir/nothere-applet
+
 
 %files -n python-%{name}
 %defattr(-,root,root)
