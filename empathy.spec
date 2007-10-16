@@ -88,9 +88,6 @@ This package contains the python module for %{name}.
 %prep
 %setup -q
 
-# remove once http://bugzilla.gnome.org/show_bug.cgi?id=470642 is fixed
-perl -pi -e 's/`pyversions -d`/python%python_version/' python/pyempathy*/Makefile*
-
 %build
 %configure2_5x --enable-python=yes --enable-aspell=yes --enable-nothere=yes
 
