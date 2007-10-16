@@ -29,6 +29,8 @@ BuildRequires: aspell-devel
 # for python binding
 BuildRequires: python-devel
 BuildRequires: pkgconfig(pygtk-2.0)
+# for applet 
+BuildRequires: pkgconfig(libpanelapplet-2.0)
 Requires: telepathy-mission-control
 # jabber by default, unless someone as a better idea
 Requires: telepathy-gabble
@@ -135,9 +137,14 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/gnome/autostart/%{name}.desktop
 %_datadir/telepathy/managers/*
 %_datadir/mission-control/profiles/*
-%python_sitelib/*so
+
+%py_platsitedir/*so
+%py_platsitedir/*la
+%py_platsitedir/*a
+
 %_libdir/megaphone-applet
 %_libdir/bonobo/servers/GNOME_Megaphone_Applet.server
+
 %files -n %{libname}
 %defattr(-,root,root)
 %{_libdir}/libempathy.so.%{major}*
