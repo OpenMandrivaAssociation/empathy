@@ -1,6 +1,6 @@
-%define major 3
+%define major 5
 %define libname %mklibname %name %major
-%define gtkmajor 4
+%define gtkmajor 6
 %define gtklibname %mklibname %name-gtk %gtkmajor
 %define develname %mklibname -d %name
 
@@ -138,7 +138,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/mandriva-%{name}.desktop
 %_bindir/*
 %_datadir/%{name}/*
-%_datadir/gnome/autostart/%{name}.desktop
+%{_sysconfdir}/xdg/autostart/empathy.desktop
 %_datadir/telepathy/managers/*
 %_datadir/mission-control/profiles/*
 
