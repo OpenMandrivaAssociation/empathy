@@ -36,6 +36,7 @@ Requires: telepathy-mission-control
 Requires: telepathy-gabble
 Requires: %{libname} = %{version}-%{release}
 
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 %description
 Empathy consists of a rich set of reusable instant messaging widgets, as
 well as a GNOME client that uses those widgets.
