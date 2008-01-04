@@ -6,7 +6,7 @@
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 0.21.1
+Version: 0.21.4
 Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
@@ -29,7 +29,7 @@ BuildRequires: aspell-devel
 # for python binding
 BuildRequires: python-devel
 BuildRequires: pkgconfig(pygtk-2.0)
-# for applet 
+# for applet
 BuildRequires: pkgconfig(libpanelapplet-2.0)
 Requires: telepathy-mission-control
 # jabber by default, unless someone as a better idea
