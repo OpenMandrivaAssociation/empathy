@@ -147,7 +147,7 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/bonobo/servers/GNOME_Megaphone_Applet.server
 %_libdir/bonobo/servers/GNOME_NotHere_Applet.server
 %_libdir/nothere-applet
-
+%{_libdir}/empathy-chat-chandler
 
 %files -n python-%{name}
 %defattr(-,root,root)
