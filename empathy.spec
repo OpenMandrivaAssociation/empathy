@@ -1,12 +1,12 @@
-%define major 10
+%define major 11
 %define libname %mklibname %name %major
-%define gtkmajor 10
+%define gtkmajor 11
 %define gtklibname %mklibname %name-gtk %gtkmajor
 %define develname %mklibname -d %name
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 0.21.90
+Version: 0.21.91
 Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
