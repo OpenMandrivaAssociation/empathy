@@ -90,7 +90,7 @@ This package contains the python module for %{name}.
 %setup -q
 
 %build
-%configure2_5x --enable-python=yes --enable-aspell=yes --enable-nothere=yes
+%configure2_5x --enable-python=yes --enable-aspell=yes --enable-nothere=yes --enable-voip=yes
 
 %make
 
@@ -149,6 +149,7 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/bonobo/servers/GNOME_NotHere_Applet.server
 %_libdir/nothere-applet
 %{_libdir}/empathy-chat-chandler
+%{_libdir}/empathy-call-chandler
 
 %files -n python-%{name}
 %defattr(-,root,root)
