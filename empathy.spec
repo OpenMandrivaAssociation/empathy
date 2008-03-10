@@ -6,12 +6,12 @@
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 0.21.91
-Release: %mkrel 2
+Version: 0.22.0
+Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
-Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/0.21/%{name}-%{version}.tar.bz2
+Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/0.22/%{name}-%{version}.tar.bz2
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(gconf-2.0)
 BuildRequires: pkgconfig(libxml-2.0)
