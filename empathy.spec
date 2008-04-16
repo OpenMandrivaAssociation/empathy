@@ -108,7 +108,7 @@ Exec=%_bindir/empathy
 Icon=%{name}
 Terminal=false
 Type=Application
-Categories=Network;InstantMessaging;
+Categories=Network;InstantMessaging;GTK;GNOME;
 EOF
 
 rm -Rf $RPM_BUILD_ROOT/%py_platsitedir/*.{a,la}
