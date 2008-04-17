@@ -7,11 +7,19 @@
 Summary: A IM client based on Telepathy framework
 Name: empathy
 Version: 0.22.1
-Release: %mkrel 1
+Release: %mkrel 2
 License: LGPLv2+
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/0.22/%{name}-%{version}.tar.bz2
+# Frederik Himpe: patches from SVN, can be removed for next upstream release
+Patch0: empathy-0.22.1-hide-sound-prefs.patch
+Patch1: empathy-0.22.1-no-autostart.patch
+Patch2: empathy-0.22.1-nothere-icons.patch
+Patch3: empathy-0.22.1-nothere-removable.patch
+Patch4: empathy-0.22.1-rev941.patch
+Patch5: empathy-0.22.1-rev942.patch
+Patch6: empathy-0.22.1-rev943.patch
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(gconf-2.0)
 BuildRequires: pkgconfig(libxml-2.0)
@@ -23,6 +31,9 @@ BuildRequires: pkgconfig(libgnomeui-2.0)
 BuildRequires: pkgconfig(libebook-1.2)
 BuildRequires: intltool
 BuildRequires: libgcrypt-devel
+# Required for patch1:
+BuildRequires: gnome-common
+BuildRequires: gtk-doc
 # required by aspell
 BuildRequires: iso-codes
 BuildRequires: aspell-devel
@@ -88,8 +99,17 @@ This package contains the python module for %{name}.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
+%patch6 -p1
 
 %build
+# required for patch1
+./autogen.sh
 %configure2_5x --enable-python=yes --enable-aspell=yes --enable-nothere=yes --enable-voip=yes
 
 %make
@@ -99,17 +119,6 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
 %find_lang %{name} --with-gnome
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
-[Desktop Entry]
-Name=Empathy
-Comment=Instant messaging client
-Exec=%_bindir/empathy
-Icon=%{name}
-Terminal=false
-Type=Application
-Categories=Network;InstantMessaging;GTK;GNOME;
-EOF
 
 rm -Rf $RPM_BUILD_ROOT/%py_platsitedir/*.{a,la}
 
@@ -136,14 +145,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/gconf/schemas/*
 %_datadir/icons/hicolor/*/apps/*
 %_datadir/dbus-1/services/*
-%{_datadir}/applications/mandriva-%{name}.desktop
 %_bindir/*
 %_datadir/%{name}/*
-%{_sysconfdir}/xdg/autostart/empathy.desktop
 %_datadir/telepathy/managers/*
 %_datadir/mission-control/profiles/*
-
-
+%{_datadir}/applications/%{name}.desktop
 %_libdir/megaphone-applet
 %_libdir/bonobo/servers/GNOME_Megaphone_Applet.server
 %_libdir/bonobo/servers/GNOME_NotHere_Applet.server
