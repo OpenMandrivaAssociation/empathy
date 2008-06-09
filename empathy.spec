@@ -66,8 +66,12 @@ Obsoletes: %mklibname %name 0
 %description -n %{libname}
 This package contains library files for %{name}.
 
+%if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %{libname} -p /sbin/ldconfig
+%endif
 
 %package -n %{gtklibname}
 Summary: Libraries for %{name}-gtk
@@ -77,8 +81,12 @@ Obsoletes: %mklibname %name 0
 %description -n %{gtklibname}
 This package contains library files for %{name}-gtk.
 
+%if %mdkversion < 200900
 %post -n %{gtklibname} -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %{gtklibname} -p /sbin/ldconfig
+%endif
 
 %package -n %{develname}
 Summary: Developement files for %{name}
