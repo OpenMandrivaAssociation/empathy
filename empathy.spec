@@ -1,25 +1,17 @@
-%define major 11
+%define major 14
 %define libname %mklibname %name %major
-%define gtkmajor 11
+%define gtkmajor 14
 %define gtklibname %mklibname %name-gtk %gtkmajor
 %define develname %mklibname -d %name
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 0.22.1
-Release: %mkrel 2
+Version: 0.23.3
+Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
-Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/0.22/%{name}-%{version}.tar.bz2
-# Frederik Himpe: patches from SVN, can be removed for next upstream release
-Patch0: empathy-0.22.1-hide-sound-prefs.patch
-Patch1: empathy-0.22.1-no-autostart.patch
-Patch2: empathy-0.22.1-nothere-icons.patch
-Patch3: empathy-0.22.1-nothere-removable.patch
-Patch4: empathy-0.22.1-rev941.patch
-Patch5: empathy-0.22.1-rev942.patch
-Patch6: empathy-0.22.1-rev943.patch
+Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/0.23/%{name}-%{version}.tar.bz2
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(gconf-2.0)
 BuildRequires: pkgconfig(libxml-2.0)
@@ -107,13 +99,6 @@ This package contains the python module for %{name}.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
 
 %build
 # required for patch1
@@ -156,17 +141,20 @@ rm -rf $RPM_BUILD_ROOT
 %doc README ChangeLog AUTHORS
 %{_sysconfdir}/gconf/schemas/*
 %_datadir/icons/hicolor/*/apps/*
-%_datadir/dbus-1/services/*
+#%_datadir/dbus-1/services/*
 %_bindir/*
 %_datadir/%{name}/*
-%_datadir/telepathy/managers/*
+#%_datadir/telepathy/managers/*
 %_datadir/mission-control/profiles/*
 %{_datadir}/applications/%{name}.desktop
 %_libdir/megaphone-applet
 %_libdir/bonobo/servers/GNOME_Megaphone_Applet.server
 %_libdir/bonobo/servers/GNOME_NotHere_Applet.server
 %_libdir/nothere-applet
-%{_libdir}/empathy-call-chandler
+#%{_libdir}/empathy-call-chandler
+%{_mandir}/man1/*
+%{_datadir}/omf/%{name}/*.omf
+
 
 %files -n python-%{name}
 %defattr(-,root,root)
