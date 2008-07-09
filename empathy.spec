@@ -35,6 +35,7 @@ BuildRequires: pkgconfig(pygtk-2.0)
 # for applet
 BuildRequires: pkgconfig(libpanelapplet-2.0)
 BuildRequires: libxslt-proc
+BuildRequires: pkgconfig(gnome-doc-utils)
 Requires: telepathy-mission-control
 # jabber by default, unless someone as a better idea
 Requires: telepathy-gabble
