@@ -6,7 +6,7 @@
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 0.23.4
+Version: 2.23.6
 Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
@@ -102,8 +102,6 @@ This package contains the python module for %{name}.
 %setup -q
 
 %build
-# required for patch1
-./autogen.sh
 %configure2_5x --enable-python=yes --enable-aspell=yes --enable-nothere=yes --enable-voip=yes
 
 %make
@@ -148,6 +146,7 @@ rm -rf $RPM_BUILD_ROOT
 #%_datadir/telepathy/managers/*
 %_datadir/mission-control/profiles/*
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/%{name}-properties.desktop
 %_libdir/megaphone-applet
 %_libdir/bonobo/servers/GNOME_Megaphone_Applet.server
 %_libdir/bonobo/servers/GNOME_NotHere_Applet.server
