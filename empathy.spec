@@ -6,7 +6,7 @@
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 2.23.6
+Version: 2.23.90
 Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
@@ -39,6 +39,9 @@ BuildRequires: pkgconfig(gnome-doc-utils)
 Requires: telepathy-mission-control
 # jabber by default, unless someone as a better idea
 Requires: telepathy-gabble
+Suggests: telepathy-butterfly
+Suggests: telepathy-haze
+Suggests: telepathy-stream-engine
 Requires: %{libname} = %{version}-%{release}
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -146,7 +149,6 @@ rm -rf $RPM_BUILD_ROOT
 #%_datadir/telepathy/managers/*
 %_datadir/mission-control/profiles/*
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/applications/%{name}-properties.desktop
 %_libdir/megaphone-applet
 %_libdir/bonobo/servers/GNOME_Megaphone_Applet.server
 %_libdir/bonobo/servers/GNOME_NotHere_Applet.server
