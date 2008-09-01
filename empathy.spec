@@ -6,21 +6,19 @@
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 2.23.90
+Version: 2.23.91
 Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
 Source: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
-BuildRequires: pkgconfig(glib-2.0)
-BuildRequires: pkgconfig(gconf-2.0)
-BuildRequires: pkgconfig(libxml-2.0)
-BuildRequires: pkgconfig(libtelepathy)
-BuildRequires: pkgconfig(libmissioncontrol)
-BuildRequires: pkgconfig(gtk+-2.0)
-BuildRequires: pkgconfig(libglade-2.0)
-BuildRequires: pkgconfig(libgnomeui-2.0)
-BuildRequires: pkgconfig(libebook-1.2)
+BuildRequires: libGConf2-devel
+BuildRequires: libtelepathy-devel
+BuildRequires: telepathy-mission-control-devel
+BuildRequires: gtk+2-devel
+BuildRequires: libglade2.0-devel
+BuildRequires: libgnomeui2-devel
+BuildRequires: evolution-data-server-devel
 BuildRequires: intltool
 BuildRequires: libgcrypt-devel
 # Required for patch1:
@@ -31,11 +29,11 @@ BuildRequires: iso-codes
 BuildRequires: aspell-devel
 # for python binding
 BuildRequires: python-devel
-BuildRequires: pkgconfig(pygtk-2.0)
+BuildRequires: pygtk2.0-devel
 # for applet
-BuildRequires: pkgconfig(libpanelapplet-2.0)
+BuildRequires: gnome-panel-devel
 BuildRequires: libxslt-proc
-BuildRequires: pkgconfig(gnome-doc-utils)
+BuildRequires: gnome-doc-utils
 Requires: telepathy-mission-control
 # jabber by default, unless someone as a better idea
 Requires: telepathy-gabble
