@@ -105,7 +105,7 @@ This package contains the python module for %{name}.
 %setup -q
 
 %build
-%configure2_5x --enable-python=yes --enable-aspell=yes --enable-nothere=yes --enable-voip=yes
+%configure2_5x --enable-python=yes --enable-aspell=yes --enable-nothere=yes --enable-voip=yes --with-compile-warnings=no
 
 %make
 
