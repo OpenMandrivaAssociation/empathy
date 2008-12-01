@@ -34,6 +34,8 @@ BuildRequires: pygtk2.0-devel
 BuildRequires: gnome-panel-devel
 BuildRequires: libxslt-proc
 BuildRequires: gnome-doc-utils
+#gw libtool dep:
+BuildRequires: libtasn1-devel
 Requires: telepathy-mission-control
 # jabber by default, unless someone as a better idea
 Requires: telepathy-gabble
