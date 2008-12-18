@@ -1,13 +1,13 @@
 %define major 17
 %define libname %mklibname %name %major
-%define gtkmajor 15
+%define gtkmajor 17
 %define gtklibname %mklibname %name-gtk %gtkmajor
 %define develname %mklibname -d %name
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 2.25.2
-Release: %mkrel 2
+Version: 2.25.3
+Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
@@ -103,7 +103,8 @@ This package contains the python module for %{name}.
 %setup -q
 
 %build
-%configure2_5x --enable-python=yes --enable-aspell=yes --enable-nothere=yes --enable-voip=yes --with-compile-warnings=no
+%configure2_5x --enable-python=yes --enable-aspell=yes --enable-nothere=yes --enable-voip=yes 
+#--with-compile-warnings=no
 
 %make
 
