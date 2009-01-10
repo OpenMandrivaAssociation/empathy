@@ -7,7 +7,7 @@
 Summary: A IM client based on Telepathy framework
 Name: empathy
 Version: 2.25.4
-Release: %mkrel 1
+Release: %mkrel 2
 License: LGPLv2+
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
@@ -87,6 +87,7 @@ This package contains library files for %{name}-gtk.
 Summary: Developement files for %{name}
 Group: Development/GNOME and GTK+
 Requires: %{libname} = %{version}-%{release}
+Requires: %{gtklibname} = %{version}-%{release}
 Provides: lib%{name}-devel = %{version}-%{release}
 Provides: %{name}-devel = %{version}-%{release}
 
