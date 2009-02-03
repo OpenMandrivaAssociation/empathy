@@ -1,13 +1,13 @@
-%define major 19
+%define major 20
 %define libname %mklibname %name %major
-%define gtkmajor 17
+%define gtkmajor 19
 %define gtklibname %mklibname %name-gtk %gtkmajor
 %define develname %mklibname -d %name
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 2.25.4
-Release: %mkrel 2
+Version: 2.25.90
+Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
@@ -15,10 +15,13 @@ Source: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz
 BuildRequires: libGConf2-devel
 BuildRequires: libtelepathy-devel
 BuildRequires: telepathy-mission-control-devel
+BuildRequires: libtelepathy-farsight-devel
+BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: gtk+2-devel
 BuildRequires: libcanberra-devel
 BuildRequires: libglade2.0-devel
 BuildRequires: libgnomeui2-devel
+BuildRequires: libnotify-devel
 BuildRequires: evolution-data-server-devel
 BuildRequires: intltool
 BuildRequires: libgcrypt-devel
@@ -40,7 +43,6 @@ Requires: telepathy-mission-control
 Requires: telepathy-gabble
 Suggests: telepathy-butterfly
 Suggests: telepathy-haze
-Suggests: telepathy-stream-engine
 Requires: %{libname} = %{version}-%{release}
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
