@@ -28,9 +28,11 @@ BuildRequires: libgcrypt-devel
 # Required for patch1:
 BuildRequires: gnome-common
 BuildRequires: gtk-doc
-# required by aspell
+# Spell check support
 BuildRequires: iso-codes
-BuildRequires: aspell-devel
+BuildRequires: enchant-devel
+# Adium support
+Buildrequires: libwebkitgtk-devel
 # for python binding
 BuildRequires: python-devel
 BuildRequires: pygtk2.0-devel
