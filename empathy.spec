@@ -1,19 +1,18 @@
-%define major 27
+%define major 29
 %define libname %mklibname %name %major
-%define gtkmajor 25
+%define gtkmajor 27
 %define gtklibname %mklibname %name-gtk %gtkmajor
 %define develname %mklibname -d %name
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 2.27.5
+Version: 2.27.91.1
 Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
 Source: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 BuildRequires: libGConf2-devel
-BuildRequires: libtelepathy-devel
 BuildRequires: telepathy-mission-control-devel
 BuildRequires: libtelepathy-farsight-devel
 BuildRequires: libgstreamer-plugins-base-devel
@@ -38,8 +37,11 @@ BuildRequires: python-devel
 BuildRequires: pygtk2.0-devel
 # for applet
 BuildRequires: gnome-panel-devel
+BuildRequires: libgeoclue-devel
+BuildRequires: libchamplain-devel
+
 BuildRequires: libxslt-proc
-BuildRequires: gnome-doc-utils
+BuildRequires: gnome-doc-utils >= 0.17.3
 Requires: telepathy-mission-control
 # jabber by default, unless someone as a better idea
 Requires: telepathy-gabble
@@ -112,7 +114,8 @@ This package contains the python module for %{name}.
 %configure2_5x --enable-python=yes --enable-nothere=yes
 #--with-compile-warnings=no
 
-%make
+#gw parallel make broken in 2.27.91.1
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -148,19 +151,17 @@ rm -rf $RPM_BUILD_ROOT
 %doc README ChangeLog AUTHORS
 %{_sysconfdir}/gconf/schemas/*
 %_datadir/icons/hicolor/*/apps/*
-#%_datadir/dbus-1/services/*
+%_datadir/dbus-1/services/*
 %_bindir/*
 %_datadir/%{name}/*
-#%_datadir/telepathy/managers/*
-%_datadir/mission-control/profiles/*
+%_datadir/telepathy/clients/Empathy.client
 %{_datadir}/applications/%{name}.desktop
 %_libdir/megaphone-applet
 %_libdir/bonobo/servers/GNOME_Megaphone_Applet.server
 %_libdir/bonobo/servers/GNOME_NotHere_Applet.server
 %_libdir/nothere-applet
-#%{_libdir}/empathy-call-chandler
 %{_mandir}/man1/*
-%{_datadir}/omf/%{name}/*.omf
+#%{_datadir}/omf/%{name}/*.omf
 
 
 %files -n python-%{name}
