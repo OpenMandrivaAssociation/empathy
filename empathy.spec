@@ -18,6 +18,8 @@ BuildRequires: libtelepathy-farsight-devel
 BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: gtk+2-devel
 BuildRequires: libcanberra-devel
+BuildRequires: unique-devel
+BuildRequires: gnome-keyring-devel
 BuildRequires: libglade2.0-devel
 BuildRequires: libgnomeui2-devel
 BuildRequires: libnotify-devel
