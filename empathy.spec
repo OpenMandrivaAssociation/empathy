@@ -13,7 +13,6 @@ Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
 Source: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 BuildRequires: libGConf2-devel
-BuildRequires: telepathy-mission-control-devel
 BuildRequires: libtelepathy-farsight-devel
 BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: gtk+2-devel
@@ -39,13 +38,12 @@ BuildRequires: python-devel
 BuildRequires: pygtk2.0-devel
 # for applet
 BuildRequires: gnome-panel-devel
-#gw fixme
-BuildRequires: pkgconfig(geoclue)
+BuildRequires: libgeoclue-devel
 BuildRequires: libchamplain-devel
 
 BuildRequires: libxslt-proc
 BuildRequires: gnome-doc-utils >= 0.17.3
-Requires: telepathy-mission-control
+Requires: telepathy-mission-control >= 5
 # jabber by default, unless someone as a better idea
 Requires: telepathy-gabble
 Suggests: telepathy-butterfly
