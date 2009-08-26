@@ -39,7 +39,8 @@ BuildRequires: python-devel
 BuildRequires: pygtk2.0-devel
 # for applet
 BuildRequires: gnome-panel-devel
-BuildRequires: libgeoclue-devel
+#gw fixme
+BuildRequires: pkgconfig(geoclue)
 BuildRequires: libchamplain-devel
 
 BuildRequires: libxslt-proc
