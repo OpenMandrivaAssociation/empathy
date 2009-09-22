@@ -7,12 +7,13 @@
 Summary: A IM client based on Telepathy framework
 Name: empathy
 Version: 2.28.0
-Release: %mkrel 1
+Release: %mkrel 2
 License: LGPLv2+
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
 Source: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
-Patch1: empathy-2.28.0-fix-linking.patch
+# do not use trunc function anymore (GIT)
+Patch0: empathy-2.28.0-removetrunc.patch
 BuildRequires: libGConf2-devel
 BuildRequires: libtelepathy-farsight-devel
 BuildRequires: libgstreamer-plugins-base-devel
@@ -45,8 +46,16 @@ BuildRequires: gnome-doc-utils >= 0.17.3
 Requires: telepathy-mission-control >= 5
 # jabber by default, unless someone as a better idea
 Requires: telepathy-gabble
+# needed by MSN
 Suggests: telepathy-butterfly
+# various protocol provided by libpurple
 Suggests: telepathy-haze
+# needed for local XMPP
+Suggests: telepathy-salut
+# needed for irc
+Suggests: telepathy-idle
+# needed for voip
+Suggests: gstreamer0.10-farsight2
 Requires: %{libname} = %{version}-%{release}
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -109,8 +118,7 @@ This package contains the python module for %{name}.
 
 %prep
 %setup -q
-%patch1 -p1
-autoreconf -fi
+%patch0 -p1 -b .remove-trunc
 
 %build
 %configure2_5x --enable-python=yes --enable-nothere=yes
