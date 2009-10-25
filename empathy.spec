@@ -7,11 +7,13 @@
 Summary: A IM client based on Telepathy framework
 Name: empathy
 Version: 2.28.1
-Release: %mkrel 1
+Release: %mkrel 2
 License: LGPLv2+
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
 Source: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+# (fc) 2.28.1-2mdv various fixes from GIT
+Patch0: empathy-2.28.1-gitfixes.patch
 BuildRequires: libGConf2-devel
 BuildRequires: libtelepathy-farsight-devel
 BuildRequires: libgstreamer-plugins-base-devel
@@ -116,6 +118,7 @@ This package contains the python module for %{name}.
 
 %prep
 %setup -q
+%patch0 -p1 -b .gitfixes
 
 %build
 %configure2_5x --enable-python=yes --enable-nothere=yes
