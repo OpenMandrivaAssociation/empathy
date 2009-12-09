@@ -1,12 +1,7 @@
-%define major 30
-%define libname %mklibname %name %major
-%define gtkmajor 28
-%define gtklibname %mklibname %name-gtk %gtkmajor
-%define develname %mklibname -d %name
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 2.28.1.2
+Version: 2.29.3
 Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
@@ -31,11 +26,6 @@ BuildRequires: iso-codes
 BuildRequires: enchant-devel
 # Adium support
 Buildrequires: libwebkitgtk-devel
-# for python binding
-BuildRequires: python-devel
-BuildRequires: pygtk2.0-devel
-# for applet
-BuildRequires: gnome-panel-devel
 BuildRequires: libgeoclue-devel
 BuildRequires: libchamplain-devel
 
@@ -54,7 +44,6 @@ Suggests: telepathy-salut
 Suggests: telepathy-idle
 # needed for voip
 Suggests: gstreamer0.10-farsight2
-Requires: %{libname} = %{version}-%{release}
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 %description
@@ -66,62 +55,15 @@ UI. Its main goal is to integrate instant messaging with the desktop by
 providing libempathy and libempathy-gtk libraries, a set of widgets that
 can be embeded into any GNOME application.
 
-%package -n %{libname}
-Summary: Libraries for %{name}
-Group: System/Libraries
-Obsoletes: %mklibname %name 0
-
-%description -n %{libname}
-This package contains library files for %{name}.
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
-%package -n %{gtklibname}
-Summary: Libraries for %{name}-gtk
-Group: System/Libraries
-Obsoletes: %mklibname %name 0
-
-%description -n %{gtklibname}
-This package contains library files for %{name}-gtk.
-
-%if %mdkversion < 200900
-%post -n %{gtklibname} -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %{gtklibname} -p /sbin/ldconfig
-%endif
-
-%package -n %{develname}
-Summary: Developement files for %{name}
-Group: Development/GNOME and GTK+
-Requires: %{libname} = %{version}-%{release}
-Requires: %{gtklibname} = %{version}-%{release}
-Provides: lib%{name}-devel = %{version}-%{release}
-Provides: %{name}-devel = %{version}-%{release}
-
-%description -n %{develname}
-This package contains developement files for %{name}.
-
-%package -n python-%name
-Summary: Python module for %{name}
-Group: Development/Python
-
-%description -n python-%name
-This package contains the python module for %{name}.
 
 %prep
 %setup -q
 
 %build
-%configure2_5x --enable-python=yes --enable-nothere=yes
+%configure2_5x
 #--with-compile-warnings=no
 
-#gw parallel make broken in 2.27.91.1
+#gw parallel make broken in 2.29.1
 make
 
 %install
@@ -129,8 +71,6 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
 %find_lang %{name} --with-gnome
-
-rm -Rf $RPM_BUILD_ROOT/%py_platsitedir/*.{a,la}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -163,33 +103,5 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/%{name}/*
 %_datadir/telepathy/clients/Empathy.client
 %{_datadir}/applications/%{name}.desktop
-%_libdir/megaphone-applet
-%_libdir/bonobo/servers/GNOME_Megaphone_Applet.server
-%_libdir/bonobo/servers/GNOME_NotHere_Applet.server
-%_libdir/nothere-applet
 %{_mandir}/man1/*
 #%{_datadir}/omf/%{name}/*.omf
-
-
-%files -n python-%{name}
-%defattr(-,root,root)
-%py_platsitedir/*so
-
-%files -n %{libname}
-%defattr(-,root,root)
-%{_libdir}/libempathy.so.%{major}*
-
-%files -n %{gtklibname}
-%defattr(-,root,root)
-%{_libdir}/libempathy-gtk.so.%{gtkmajor}*
-
-%files -n %{develname}
-%defattr(-,root,root)
-%{_libdir}/*.so
-%{_libdir}/*.la
-%{_libdir}/*.a
-%{_libdir}/pkgconfig/*.pc
-%{_includedir}/libempathy-gtk
-%{_includedir}/libempathy
-%{_datadir}/gtk-doc/html/libempathy-gtk
-%{_datadir}/gtk-doc/html/libempathy
