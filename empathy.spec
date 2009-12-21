@@ -1,7 +1,7 @@
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 2.29.3
+Version: 2.29.4
 Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
@@ -18,6 +18,7 @@ BuildRequires: libglade2.0-devel
 BuildRequires: libgnomeui2-devel
 BuildRequires: libnotify-devel
 BuildRequires: evolution-data-server-devel
+BuildRequires: nautilus-sendto-devel
 BuildRequires: intltool
 BuildRequires: libgcrypt-devel
 BuildRequires: gtk-doc
@@ -44,6 +45,9 @@ Suggests: telepathy-salut
 Suggests: telepathy-idle
 # needed for voip
 Suggests: gstreamer0.10-farsight2
+Suggests: nautilus-sendto
+Provides: nautilus-sendto-empathy
+Obsoletes: nautilus-sendto-empathy
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 %description
@@ -69,6 +73,7 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
+rm -f %buildroot%_libdir/nautilus-sendto/plugins/libnstempathy*a
 
 %find_lang %{name} --with-gnome
 
@@ -105,3 +110,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/%{name}.desktop
 %{_mandir}/man1/*
 #%{_datadir}/omf/%{name}/*.omf
+%_libdir/nautilus-sendto/plugins/libnstempathy.so
