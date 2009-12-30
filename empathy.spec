@@ -2,7 +2,7 @@
 Summary: A IM client based on Telepathy framework
 Name: empathy
 Version: 2.29.4
-Release: %mkrel 1
+Release: %mkrel 2
 License: LGPLv2+
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
@@ -13,7 +13,7 @@ BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: gtk+2-devel
 BuildRequires: libcanberra-devel
 BuildRequires: unique-devel
-BuildRequires: gnome-keyring-devel
+BuildRequires: libgnome-keyring-devel
 BuildRequires: libglade2.0-devel
 BuildRequires: libgnomeui2-devel
 BuildRequires: libnotify-devel
