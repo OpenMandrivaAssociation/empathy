@@ -1,8 +1,8 @@
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 2.29.5
-Release: %mkrel 2
+Version: 2.29.5.1
+Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
