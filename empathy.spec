@@ -1,7 +1,7 @@
 
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 2.29.90
+Version: 2.29.91
 Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
@@ -108,6 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/%{name}/*
 %_datadir/telepathy/clients/Empathy.client
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/%{name}-accounts.desktop
 %{_mandir}/man1/*
 #%{_datadir}/omf/%{name}/*.omf
 %_libdir/nautilus-sendto/plugins/libnstempathy.so
