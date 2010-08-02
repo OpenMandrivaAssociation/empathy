@@ -1,6 +1,6 @@
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 2.30.2
+Version: 2.31.6
 Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
@@ -12,10 +12,11 @@ BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: gtk+2-devel
 BuildRequires: libcanberra-devel
 BuildRequires: unique-devel
+BuildRequires: libfolks-devel
 BuildRequires: libgnome-keyring-devel
-BuildRequires: libglade2.0-devel
-BuildRequires: libgnomeui2-devel
 BuildRequires: libnotify-devel
+BuildRequires: libtelepathy-glib-devel >= 0.11.7
+BuildRequires: libtelepathy-logger-devel
 BuildRequires: evolution-data-server-devel
 BuildRequires: nautilus-sendto-devel
 BuildRequires: intltool
@@ -63,11 +64,8 @@ can be embeded into any GNOME application.
 %setup -q
 
 %build
-%configure2_5x
-#--with-compile-warnings=no
-
-#gw parallel make broken in 2.29.1
-make
+%configure2_5x --enable-gtk3=no
+%make
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -79,17 +77,11 @@ rm -f %buildroot%_libdir/nautilus-sendto/plugins/libnstempathy*a
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%define schemas %{name}
-
 %if %mdkversion < 200900
 %post
-%post_install_gconf_schemas %{schemas}
 %update_icon_cache hicolor
 %update_menus
 %endif
-
-%preun
-%preun_uninstall_gconf_schemas %{schemas}
 
 %if %mdkversion < 200900
 %postun
@@ -100,14 +92,17 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(-,root,root,-)
 %doc README ChangeLog AUTHORS
-%{_sysconfdir}/gconf/schemas/*
 %_datadir/icons/hicolor/*/apps/*
 %_datadir/dbus-1/services/*
 %_bindir/*
 %_datadir/%{name}/*
 %_datadir/telepathy/clients/Empathy.client
+%_datadir/telepathy/clients/Empathy.AudioVideo.client
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/%{name}-accounts.desktop
 %{_mandir}/man1/*
 #%{_datadir}/omf/%{name}/*.omf
 %_libdir/nautilus-sendto/plugins/libnstempathy.so
+%_libexecdir/empathy-av
+%_datadir/GConf/gsettings/empathy.convert
+%_datadir/glib-2.0/schemas/org.gnome.Empathy.gschema.xml
