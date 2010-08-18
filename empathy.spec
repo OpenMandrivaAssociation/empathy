@@ -1,6 +1,6 @@
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 2.31.6
+Version: 2.31.90
 Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
@@ -15,8 +15,8 @@ BuildRequires: unique-devel
 BuildRequires: libfolks-devel
 BuildRequires: libgnome-keyring-devel
 BuildRequires: libnotify-devel
-BuildRequires: libtelepathy-glib-devel >= 0.11.7
-BuildRequires: libtelepathy-logger-devel
+BuildRequires: libtelepathy-glib-devel >= 0.11.13
+BuildRequires: libtelepathy-logger-devel >= 0.1.5
 BuildRequires: evolution-data-server-devel
 BuildRequires: nautilus-sendto-devel
 BuildRequires: intltool
