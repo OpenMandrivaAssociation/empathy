@@ -12,14 +12,14 @@ BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: gtk+2-devel
 BuildRequires: libcanberra-devel
 BuildRequires: unique-devel
-BuildRequires: libfolks-devel
+BuildRequires: libfolks-devel >= 0.1.15
 BuildRequires: libgnome-keyring-devel
 BuildRequires: libgcr-devel
 BuildRequires: libnotify-devel
 BuildRequires: libtelepathy-glib-devel >= 0.11.13
 BuildRequires: libtelepathy-logger-devel >= 0.1.5
 BuildRequires: evolution-data-server-devel
-BuildRequires: nautilus-sendto-devel
+BuildRequires: nautilus-sendto-devel >= 2.31.7
 BuildRequires: intltool
 BuildRequires: libgcrypt-devel
 BuildRequires: gtk-doc
@@ -29,7 +29,7 @@ BuildRequires: enchant-devel
 # Adium support
 Buildrequires: libwebkitgtk-devel
 BuildRequires: libgeoclue-devel
-BuildRequires: libchamplain-devel
+BuildRequires: libchamplain-devel >= 0.7.1
 
 BuildRequires: libxslt-proc
 BuildRequires: gnome-doc-utils >= 0.17.3
