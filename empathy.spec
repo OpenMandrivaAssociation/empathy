@@ -1,6 +1,6 @@
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 2.31.92
+Version: 2.32.0
 Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
