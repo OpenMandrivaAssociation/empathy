@@ -10,7 +10,7 @@ BuildRequires: libGConf2-devel
 BuildRequires: libtelepathy-farsight-devel
 BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: gtk+2-devel
-BuildRequires: libcanberra-devel
+BuildRequires: libcanberra-gtk-devel
 BuildRequires: unique-devel
 BuildRequires: libfolks-devel >= 0.1.15
 BuildRequires: libgnome-keyring-devel
