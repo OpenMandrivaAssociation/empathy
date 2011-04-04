@@ -1,6 +1,6 @@
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 2.32.2
+Version: 2.34.0
 Release: %mkrel 1
 License: LGPLv2+
 Group: Networking/Instant messaging
@@ -12,14 +12,15 @@ BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: gtk+2-devel
 BuildRequires: libcanberra-gtk-devel
 BuildRequires: unique-devel
-BuildRequires: libfolks-devel >= 0.1.15
+BuildRequires: libfolks-devel >= 0.4.0
 BuildRequires: libgnome-keyring-devel
 BuildRequires: libgcr-devel
-BuildRequires: libnotify-devel
-BuildRequires: libtelepathy-glib-devel >= 0.11.15
-BuildRequires: libtelepathy-logger-devel >= 0.1.5
+BuildRequires: libnotify-devel >= 0.7.0
+BuildRequires: libtelepathy-glib-devel >= 0.14.1
+BuildRequires: libtelepathy-logger-devel >= 0.2
 BuildRequires: evolution-data-server-devel
 BuildRequires: nautilus-sendto-devel >= 2.31.7
+BuildRequires: nautilus-sendto-devel <= 2.90
 BuildRequires: intltool
 BuildRequires: libgcrypt-devel
 BuildRequires: gtk-doc
@@ -100,6 +101,7 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/telepathy/clients/Empathy.client
 %_datadir/telepathy/clients/Empathy.AudioVideo.client
 %_datadir/telepathy/clients/Empathy.Auth.client
+%_datadir/telepathy/clients/Empathy.Call.client
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/%{name}-accounts.desktop
 %{_mandir}/man1/*
