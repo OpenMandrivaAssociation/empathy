@@ -6,6 +6,7 @@ License: LGPLv2+
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
 Source: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+Patch0: empathy-2.34.0-gcr3.patch
 BuildRequires: libGConf2-devel
 BuildRequires: libtelepathy-farsight-devel
 BuildRequires: libgstreamer-plugins-base-devel
@@ -65,6 +66,7 @@ can be embeded into any GNOME application.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure2_5x --enable-gtk3=no
