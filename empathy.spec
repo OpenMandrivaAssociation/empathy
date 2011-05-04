@@ -23,6 +23,7 @@ BuildRequires: nautilus-sendto-devel >= 2.31.7
 BuildRequires: nautilus-sendto-devel <= 2.90
 BuildRequires: intltool
 BuildRequires: libgcrypt-devel
+BuildRequires: gnutls-devel >= 2.8.5
 BuildRequires: gtk-doc
 # Spell check support
 BuildRequires: iso-codes
