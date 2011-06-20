@@ -32,7 +32,7 @@ BuildRequires: iso-codes
 BuildRequires: enchant-devel
 # Adium support
 Buildrequires: libwebkitgtk-devel
-BuildRequires: libgeoclue-devel
+BuildRequires: geoclue-devel
 BuildRequires: libchamplain-devel >= 0.7.1
 
 BuildRequires: libxslt-proc
