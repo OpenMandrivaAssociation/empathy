@@ -74,14 +74,14 @@ can be embeded into any GNOME application.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 rm -f %buildroot%_libdir/nautilus-sendto/plugins/libnstempathy*a
 
 %find_lang %{name} --with-gnome
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post
