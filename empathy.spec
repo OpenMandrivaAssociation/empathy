@@ -7,6 +7,7 @@ Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
 
+BuildRequires:	glib2.0-common
 BuildRequires:	gnome-doc-utils >= 0.17.3
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	iso-codes >= 0.35
@@ -27,19 +28,23 @@ BuildRequires:	pkgconfig(geocode-glib)
 BuildRequires:	pkgconfig(glib-2.0) >= 2.28.0
 BuildRequires:	pkgconfig(gnome-keybindings) >= 2.31.4
 BuildRequires:	pkgconfig(gnome-keyring-1) >= 2.26.0
+BuildRequires:	pkgconfig(goa-1.0)
 BuildRequires:	pkgconfig(gnutls) >= 2.8.5
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
 BuildRequires:	pkgconfig(gstreamer-0.10) >= 0.10.32
 BuildRequires:	pkgconfig(gstreamer-plugins-base-0.10)
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.0.2
 BuildRequires:	pkgconfig(gudev-1.0)
+BuildRequires:	pkgconfig(libcanberra-gtk) >= 0.25
 BuildRequires:	pkgconfig(libcanberra-gtk3) >= 0.25
 BuildRequires:	pkgconfig(libnm-glib) >= 0.7.0
 BuildRequires:	pkgconfig(libnotify) >= 0.7
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
 BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(mission-control-plugins)
 BuildRequires:	pkgconfig(nautilus-sendto) >= 2.90.0
+BuildRequires:	pkgconfig(pixman-1)
 BuildRequires:	pkgconfig(telepathy-farsight) >= 0.0.18
 BuildRequires:	pkgconfig(telepathy-farstream) >= 0.1.2
 BuildRequires:	pkgconfig(telepathy-glib) >= 0.17.0
@@ -52,6 +57,8 @@ Requires:	gsettings-desktop-schemas
 Requires:	telepathy-mission-control >= 5
 # jabber by default, unless someone has a better idea
 Requires:	telepathy-gabble
+# MD after removing dep loop in telepathy-logger
+Requires:	telepathy-logger
 # Spell check support
 Requires:	iso-codes
 # needed by MSN
@@ -65,8 +72,7 @@ Suggests:	telepathy-idle
 # needed for voip
 Suggests:	gstreamer0.10-farsight2
 Suggests:	nautilus-sendto
-Provides:	nautilus-sendto-empathy
-Obsoletes:	nautilus-sendto-empathy
+%rename	nautilus-sendto-empathy
 
 %description
 Empathy consists of a rich set of reusable instant messaging widgets, as
@@ -100,15 +106,20 @@ find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 %{_datadir}/dbus-1/services/*
 %{_bindir}/*
 %{_datadir}/%{name}/*
-%{_datadir}/telepathy/clients/Empathy.client
 %{_datadir}/telepathy/clients/Empathy.AudioVideo.client
 %{_datadir}/telepathy/clients/Empathy.Auth.client
 %{_datadir}/telepathy/clients/Empathy.Call.client
+%{_datadir}/telepathy/clients/Empathy.Chat.client
+%{_datadir}/telepathy/clients/Empathy.FileTransfer.client
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/%{name}-accounts.desktop
-%{_mandir}/man1/*
+%{_libdir}/mission-control-plugins.0/mcp-account-manager-goa.so
 %{_libdir}/nautilus-sendto/plugins/libnstempathy.so
-%_libexecdir/empathy-av
-%_libexecdir/empathy-auth-client
+%{_libexecdir}/empathy-av
+%{_libexecdir}/empathy-auth-client
+%{_libexecdir}/empathy-call
+%{_libexecdir}/empathy-chat
 %{_datadir}/GConf/gsettings/empathy.convert
 %{_datadir}/glib-2.0/schemas/org.gnome.Empathy.gschema.xml
+%{_mandir}/man1/*
+
