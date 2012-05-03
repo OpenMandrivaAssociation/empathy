@@ -1,11 +1,11 @@
 Summary: A IM client based on Telepathy framework
 Name: empathy
-Version: 3.5.1
+Version: 3.4.1
 Release: 1
 License: LGPLv2+
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
-Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/3.5/%{name}-%{version}.tar.xz
+Source0: http://ftp.gnome.org/pub/GNOME/sources/empathy/3.4/%{name}-%{version}.tar.xz
 
 BuildRequires:	glib2.0-common
 BuildRequires:	gnome-doc-utils >= 0.17.3
@@ -95,7 +95,6 @@ can be embeded into any GNOME application.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 
@@ -124,6 +123,5 @@ find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 %{_datadir}/glib-2.0/schemas/org.gnome.Empathy.gschema.xml
 %{_mandir}/man1/*
 
-
-%{_datadir}/help/*/%{name}/*.page
-%{_datadir}/help/*/%{name}/figures/*.png
+#{_datadir}/help/*/%{name}/*.page
+#{_datadir}/help/*/%{name}/figures/*.png
