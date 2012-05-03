@@ -101,7 +101,7 @@ find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 
 %find_lang %{name} --with-gnome
 
-for l in C ca cs de el en_GB es eu fi fr gl hu it ja lv pl ru sl sr sv te zh_CN; do
+for l in C ca cs de el en_GB es eu fi fr gl hu it ja lv pl ru sl sv te zh_CN; do
 	echo "%%dir %%{_datadir}/help/$l"
 	echo "%%lang($l) %%{_datadir}/help/$l/%%{name}"
 done >> %{name}.lang
