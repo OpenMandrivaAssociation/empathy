@@ -8,48 +8,49 @@ URL: http://live.gnome.org/Empathy
 Source0: http://ftp.gnome.org/pub/GNOME/sources/empathy/3.4/%{name}-%{version}.tar.xz
 
 BuildRequires:	glib2.0-common
-BuildRequires:	gnome-doc-utils >= 0.17.3
-BuildRequires:	intltool >= 0.35.0
-BuildRequires:	iso-codes >= 0.35
+BuildRequires:	gnome-doc-utils
+BuildRequires:	intltool
+BuildRequires:	itstool
+BuildRequires:	iso-codes
 BuildRequires:	pkgconfig(champlain-0.12)
 BuildRequires:	pkgconfig(champlain-gtk-0.12)
-BuildRequires:	pkgconfig(cheese-gtk) >= 2.91.91.1
-BuildRequires:	pkgconfig(clutter-1.0) >= 1.7.14
+BuildRequires:	pkgconfig(cheese-gtk)
+BuildRequires:	pkgconfig(clutter-1.0)
 BuildRequires:	pkgconfig(clutter-gtk-1.0)
 BuildRequires:	pkgconfig(clutter-gst-1.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
-BuildRequires:	pkgconfig(enchant) >= 1.2.0
+BuildRequires:	pkgconfig(enchant)
 BuildRequires:	pkgconfig(evolution-data-server-1.2)
-BuildRequires:	pkgconfig(farsight2-0.10)
-BuildRequires:	pkgconfig(folks) >= 0.6.0
-BuildRequires:	pkgconfig(gcr-3) >= 2.91.4
-BuildRequires:	pkgconfig(geoclue) >= 0.11
+BuildRequires:	pkgconfig(farstream-0.1)
+BuildRequires:	pkgconfig(folks)
+BuildRequires:	pkgconfig(gcr-3)
+BuildRequires:	pkgconfig(geoclue)
 BuildRequires:	pkgconfig(geocode-glib)
-BuildRequires:	pkgconfig(glib-2.0) >= 2.28.0
-BuildRequires:	pkgconfig(gnome-keybindings) >= 2.31.4
-BuildRequires:	pkgconfig(gnome-keyring-1) >= 2.26.0
+BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(gnome-keybindings)
+BuildRequires:	pkgconfig(gnome-keyring-1)
 BuildRequires:	pkgconfig(goa-1.0)
-BuildRequires:	pkgconfig(gnutls) >= 2.8.5
+BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
-BuildRequires:	pkgconfig(gstreamer-0.10) >= 0.10.32
+BuildRequires:	pkgconfig(gstreamer-0.10)
 BuildRequires:	pkgconfig(gstreamer-plugins-base-0.10)
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.0.2
 BuildRequires:	pkgconfig(gudev-1.0)
-BuildRequires:	pkgconfig(libcanberra-gtk) >= 0.25
-BuildRequires:	pkgconfig(libcanberra-gtk3) >= 0.25
-BuildRequires:	pkgconfig(libnm-glib) >= 0.7.0
-BuildRequires:	pkgconfig(libnotify) >= 0.7
+BuildRequires:	pkgconfig(libcanberra-gtk)
+BuildRequires:	pkgconfig(libcanberra-gtk3)
+BuildRequires:	pkgconfig(libnm-glib)
+BuildRequires:	pkgconfig(libnotify)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(mission-control-plugins)
-BuildRequires:	pkgconfig(nautilus-sendto) >= 2.90.0
+BuildRequires:	pkgconfig(nautilus-sendto)
 BuildRequires:	pkgconfig(pixman-1)
-BuildRequires:	pkgconfig(telepathy-farsight) >= 0.0.19
-BuildRequires:	pkgconfig(telepathy-farstream) >= 0.1.2
-BuildRequires:	pkgconfig(telepathy-glib) >= 0.17.0
-BuildRequires:	pkgconfig(telepathy-logger-0.2) >= 0.2.10
-BuildRequires:	pkgconfig(webkitgtk-3.0) >= 1.3.13
+BuildRequires:	pkgconfig(telepathy-farsight)
+BuildRequires:	pkgconfig(telepathy-farstream)
+BuildRequires:	pkgconfig(telepathy-glib)
+BuildRequires:	pkgconfig(telepathy-logger-0.2)
+BuildRequires:	pkgconfig(webkitgtk-3.0)
 BuildRequires:	pkgconfig(x11)
 
 # anything in _datadir/glib-2.0/schemas/org.gnome.*.gschema.xml
