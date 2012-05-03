@@ -45,7 +45,7 @@ BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(mission-control-plugins)
 BuildRequires:	pkgconfig(nautilus-sendto) >= 2.90.0
 BuildRequires:	pkgconfig(pixman-1)
-BuildRequires:	pkgconfig(telepathy-farsight) >= 0.0.18
+BuildRequires:	pkgconfig(telepathy-farsight) >= 0.0.19
 BuildRequires:	pkgconfig(telepathy-farstream) >= 0.1.2
 BuildRequires:	pkgconfig(telepathy-glib) >= 0.17.0
 BuildRequires:	pkgconfig(telepathy-logger-0.2) >= 0.2.10
