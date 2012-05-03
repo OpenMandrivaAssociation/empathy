@@ -126,5 +126,4 @@ find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 
 
 %{_datadir}/help/*/%{name}/*.page
-#%{_datadir}/help/*/%{name}/*.png
 %{_datadir}/help/*/%{name}/figures/*.png
