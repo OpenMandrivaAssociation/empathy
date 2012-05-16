@@ -5,7 +5,7 @@ Release: 1
 License: LGPLv2+
 Group: Networking/Instant messaging
 URL: http://live.gnome.org/Empathy
-Source0: http://ftp.gnome.org/pub/GNOME/sources/empathy/3.4/%{name}-%{version}.tar.xz
+Source0: http://ftp.gnome.org/pub/GNOME/sources/empathy/%{name}-%{version}.tar.xz
 
 BuildRequires:	glib2.0-common
 BuildRequires:	intltool
