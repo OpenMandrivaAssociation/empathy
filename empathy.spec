@@ -8,7 +8,6 @@ URL: http://live.gnome.org/Empathy
 Source0: http://ftp.gnome.org/pub/GNOME/sources/empathy/3.4/%{name}-%{version}.tar.xz
 
 BuildRequires:	glib2.0-common
-BuildRequires:	gnome-doc-utils
 BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	iso-codes
@@ -27,6 +26,7 @@ BuildRequires:	pkgconfig(gcr-3)
 BuildRequires:	pkgconfig(geoclue)
 BuildRequires:	pkgconfig(geocode-glib)
 BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	pkgconfig(gnome-keybindings)
 BuildRequires:	pkgconfig(gnome-keyring-1)
 BuildRequires:	pkgconfig(goa-1.0)
