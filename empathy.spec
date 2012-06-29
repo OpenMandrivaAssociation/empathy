@@ -1,11 +1,11 @@
-Summary: A IM client based on Telepathy framework
-Name: empathy
-Version: 3.4.2.1
-Release: 1
-License: LGPLv2+
-Group: Networking/Instant messaging
-URL: http://live.gnome.org/Empathy
-Source0: http://ftp.gnome.org/pub/GNOME/sources/empathy/%{name}-%{version}.tar.xz
+Summary:	A IM client based on Telepathy framework
+Name:		empathy
+Version:	3.4.2.3
+Release:	1
+License:	LGPLv2+
+Group:		Networking/Instant messaging
+URL:		http://live.gnome.org/Empathy
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/empathy/%{name}-%{version}.tar.xz
 
 BuildRequires:	glib2.0-common
 BuildRequires:	intltool
@@ -101,33 +101,26 @@ find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 
 %find_lang %{name} --with-gnome
 
-for l in C ca cs de el en_GB es eu fi fr gl hu it ja lv pl ru sl sv te zh_CN; do
-	echo "%%dir %%{_datadir}/help/$l"
-	echo "%%lang($l) %%{_datadir}/help/$l/%%{name}"
-done >> %{name}.lang
-
 %files -f %{name}.lang
 %doc README ChangeLog AUTHORS
 %{_datadir}/icons/hicolor/*/apps/*
 %{_datadir}/dbus-1/services/*
 %{_bindir}/*
-%{_datadir}/%{name}/*
-%{_datadir}/telepathy/clients/Empathy.AudioVideo.client
-%{_datadir}/telepathy/clients/Empathy.Auth.client
-%{_datadir}/telepathy/clients/Empathy.Call.client
-%{_datadir}/telepathy/clients/Empathy.Chat.client
-%{_datadir}/telepathy/clients/Empathy.FileTransfer.client
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/applications/%{name}-accounts.desktop
 %{_libdir}/mission-control-plugins.0/mcp-account-manager-goa.so
 %{_libdir}/nautilus-sendto/plugins/libnstempathy.so
 %{_libexecdir}/empathy-av
 %{_libexecdir}/empathy-auth-client
 %{_libexecdir}/empathy-call
 %{_libexecdir}/empathy-chat
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/%{name}/*
+%{_datadir}/applications/%{name}-accounts.desktop
 %{_datadir}/GConf/gsettings/empathy.convert
 %{_datadir}/glib-2.0/schemas/org.gnome.Empathy.gschema.xml
+%{_datadir}/telepathy/clients/Empathy.AudioVideo.client
+%{_datadir}/telepathy/clients/Empathy.Auth.client
+%{_datadir}/telepathy/clients/Empathy.Call.client
+%{_datadir}/telepathy/clients/Empathy.Chat.client
+%{_datadir}/telepathy/clients/Empathy.FileTransfer.client
 %{_mandir}/man1/*
 
-#{_datadir}/help/*/%{name}/*.page
-#{_datadir}/help/*/%{name}/figures/*.png
