@@ -1,11 +1,13 @@
+%define url_ver %(echo %{version} | cut -d. -f1,2)
+
 Summary:	A IM client based on Telepathy framework
 Name:		empathy
-Version:	3.6.2
+Version:	3.6.3
 Release:	1
 License:	LGPLv2+
 Group:		Networking/Instant messaging
 URL:		http://live.gnome.org/Empathy
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/empathy/3.6/%{name}-%{version}.tar.xz
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/empathy/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	glib2.0-common
 BuildRequires:	intltool
