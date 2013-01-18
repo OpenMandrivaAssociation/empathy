@@ -1,4 +1,5 @@
 %define url_ver %(echo %{version} | cut -d. -f1,2)
+%define	gstapi	1.0
 
 Summary:	A IM client based on Telepathy framework
 Name:		empathy
@@ -22,7 +23,7 @@ BuildRequires:	pkgconfig(clutter-gst-1.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(enchant)
 BuildRequires:	pkgconfig(evolution-data-server-1.2)
-BuildRequires:	pkgconfig(farstream-0.1)
+BuildRequires:	pkgconfig(farstream-0.2)
 BuildRequires:	pkgconfig(folks)
 BuildRequires:	pkgconfig(gcr-3)
 BuildRequires:	pkgconfig(geoclue)
@@ -34,8 +35,8 @@ BuildRequires:	pkgconfig(gnome-keyring-1)
 BuildRequires:	pkgconfig(goa-1.0)
 BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
-BuildRequires:	pkgconfig(gstreamer-0.10)
-BuildRequires:	pkgconfig(gstreamer-plugins-base-0.10)
+BuildRequires:	pkgconfig(gstreamer-%{gstapi})
+BuildRequires:	pkgconfig(gstreamer-plugins-base-%{gstapi})
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.0.2
 BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:	pkgconfig(libcanberra-gtk)
@@ -74,7 +75,6 @@ Suggests:	telepathy-salut
 # needed for irc
 Suggests:	telepathy-idle
 # needed for voip
-Suggests:	gstreamer0.10-farsight2
 Suggests:	nautilus-sendto
 %rename	nautilus-sendto-empathy
 
@@ -100,8 +100,6 @@ can be embeded into any GNOME application.
 
 %install
 %makeinstall_std
-find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
-
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
