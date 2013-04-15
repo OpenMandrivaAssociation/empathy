@@ -7,7 +7,7 @@ Version:	3.6.3
 Release:	1
 License:	LGPLv2+
 Group:		Networking/Instant messaging
-URL:		http://live.gnome.org/Empathy
+Url:		http://live.gnome.org/Empathy
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/empathy/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	glib2.0-common
@@ -45,6 +45,7 @@ BuildRequires:	pkgconfig(libnm-glib)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
+BuildRequires:	pkgconfig(libsecret-1)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(mission-control-plugins)
 BuildRequires:	pkgconfig(nautilus-sendto)
@@ -54,7 +55,6 @@ BuildRequires:	pkgconfig(telepathy-glib)
 BuildRequires:	pkgconfig(telepathy-logger-0.2)
 BuildRequires:	pkgconfig(webkitgtk-3.0)
 BuildRequires:	pkgconfig(x11)
-BuildRequires:	pkgconfig(libsecret-1)
 
 Requires:	folks
 # anything in _datadir/glib-2.0/schemas/org.gnome.*.gschema.xml
