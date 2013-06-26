@@ -4,7 +4,7 @@
 Summary:	A IM client based on Telepathy framework
 Name:		empathy
 Version:	3.6.3
-Release:	2
+Release:	3
 License:	LGPLv2+
 Group:		Networking/Instant messaging
 Url:		http://live.gnome.org/Empathy
@@ -14,6 +14,7 @@ BuildRequires:	glib2.0-common
 BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	iso-codes
+BuildRequires:	yelp-tools
 BuildRequires:	pkgconfig(champlain-0.12)
 BuildRequires:	pkgconfig(champlain-gtk-0.12)
 BuildRequires:	pkgconfig(cheese-gtk)
@@ -26,6 +27,7 @@ BuildRequires:	pkgconfig(evolution-data-server-1.2)
 BuildRequires:	pkgconfig(farstream-0.2)
 BuildRequires:	pkgconfig(folks)
 BuildRequires:	pkgconfig(gcr-3)
+BuildRequires:	pkgconfig(gee-0.8)
 BuildRequires:	pkgconfig(geoclue)
 BuildRequires:	pkgconfig(geocode-glib)
 BuildRequires:	pkgconfig(glib-2.0)
@@ -48,7 +50,6 @@ BuildRequires:	pkgconfig(libpulse-mainloop-glib)
 BuildRequires:	pkgconfig(libsecret-1)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(mission-control-plugins)
-BuildRequires:	pkgconfig(nautilus-sendto)
 BuildRequires:	pkgconfig(pixman-1)
 BuildRequires:	pkgconfig(telepathy-farstream)
 BuildRequires:	pkgconfig(telepathy-glib)
@@ -108,7 +109,7 @@ can be embeded into any GNOME application.
 %{_datadir}/dbus-1/services/*
 %{_bindir}/*
 %{_libdir}/mission-control-plugins.0/mcp-account-manager-goa.so
-%{_libdir}/nautilus-sendto/plugins/libnstempathy.so
+#{_libdir}/nautilus-sendto/plugins/libnstempathy.so
 %{_libdir}/%{name}/*.so
 %{_libexecdir}/empathy-auth-client
 %{_libexecdir}/empathy-call
