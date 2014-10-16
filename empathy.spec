@@ -3,8 +3,8 @@
 
 Summary:	A IM client based on Telepathy framework
 Name:		empathy
-Version:	3.6.3
-Release:	9
+Version:	3.12.7
+Release:	1
 License:	LGPLv2+
 Group:		Networking/Instant messaging
 Url:		http://live.gnome.org/Empathy
@@ -28,8 +28,8 @@ BuildRequires:	pkgconfig(farstream-0.2)
 BuildRequires:	pkgconfig(folks)
 BuildRequires:	pkgconfig(gcr-3)
 BuildRequires:	pkgconfig(gee-0.8)
-BuildRequires:	pkgconfig(geoclue)
-BuildRequires:	pkgconfig(geocode-glib)
+BuildRequires:	pkgconfig(geoclue-2.0)
+BuildRequires:	pkgconfig(geocode-glib-1.0)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	pkgconfig(gnome-keybindings)
@@ -93,15 +93,16 @@ can be embeded into any GNOME application.
 %apply_patches
 
 %build
-%configure2_5x  \
-	--disable-static \
-	--enable-empathy-av=yes
+export PYTHON=%__python2
+%configure
 
 %make
 
 %install
 %makeinstall_std
 %find_lang %{name} --with-gnome
+%find_lang %{name}-tpaw
+cat %{name}-tpaw.lang >> %{name}.lang
 
 %files -f %{name}.lang
 %doc README ChangeLog AUTHORS
@@ -114,6 +115,8 @@ can be embeded into any GNOME application.
 %{_libexecdir}/empathy-auth-client
 %{_libexecdir}/empathy-call
 %{_libexecdir}/empathy-chat
+%{_datadir}/appdata/empathy.appdata.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.telepathy-account-widgets.gschema.xml
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/*
 %{_datadir}/adium/message-styles/*
