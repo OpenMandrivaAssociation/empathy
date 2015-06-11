@@ -3,8 +3,8 @@
 
 Summary:	A IM client based on Telepathy framework
 Name:		empathy
-Version:	 3.12.9
-Release:	2
+Version:	3.12.9
+Release:	3
 License:	LGPLv2+
 Group:		Networking/Instant messaging
 Url:		http://live.gnome.org/Empathy
