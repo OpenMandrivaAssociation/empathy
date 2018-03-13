@@ -3,8 +3,8 @@
 
 Summary:	A IM client based on Telepathy framework
 Name:		empathy
-Version:	3.12.11
-Release:	4
+Version:	3.12.14
+Release:	1
 License:	LGPLv2+
 Group:		Networking/Instant messaging
 Url:		http://live.gnome.org/Empathy
@@ -54,7 +54,7 @@ BuildRequires:	pkgconfig(pixman-1)
 BuildRequires:	pkgconfig(telepathy-farstream)
 BuildRequires:	pkgconfig(telepathy-glib)
 BuildRequires:	pkgconfig(telepathy-logger-0.2)
-BuildRequires:	pkgconfig(webkitgtk-3.0)
+BuildRequires:	pkgconfig(webkit2gtk-4.0)
 BuildRequires:	pkgconfig(x11)
 
 Requires:	folks

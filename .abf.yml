@@ -1,7 +1,8 @@
 removed_sources:
+  empathy-3.12.11.tar.xz: 64646b9929cefdb94152e9982f4cc6497bdad511
   empathy-3.12.7.tar.xz: 08098bb2c1179a939dc4f59081838e2fa21c8309
   empathy-3.12.9.tar.xz: fcea8da36a452f4fefe99c2e2ec8a0fec35196b7
   empathy-3.6.2.tar.xz: 6e4bc9f20e545b556fa15217f13017aa8740407a
   empathy-3.6.3.tar.xz: d1c82c3395040f07e62743114af7339000195459
 sources:
-  empathy-3.12.11.tar.xz: 64646b9929cefdb94152e9982f4cc6497bdad511
+  empathy-3.12.14.tar.xz: 55bbcd7937ebc6dbd3bb98e683645e227ccaff78
