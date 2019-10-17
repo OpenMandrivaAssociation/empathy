@@ -4,7 +4,7 @@
 Summary:	A IM client based on Telepathy framework
 Name:		empathy
 Version:	3.12.14
-Release:	2
+Release:	3
 License:	LGPLv2+
 Group:		Networking/Instant messaging
 Url:		http://live.gnome.org/Empathy
@@ -68,15 +68,15 @@ Requires:	telepathy-logger
 # Spell check support
 Requires:	iso-codes
 # needed by MSN
-Suggests:	telepathy-butterfly
+Recommends:	telepathy-butterfly
 # various protocol provided by libpurple
-Suggests:	telepathy-haze
+Recommends:	telepathy-haze
 # needed for local XMPP
-Suggests:	telepathy-salut
+Recommends:	telepathy-salut
 # needed for irc
-Suggests:	telepathy-idle
+Recommends:	telepathy-idle
 # needed for voip
-Suggests:	nautilus-sendto
+Recommends:	nautilus-sendto
 %rename	nautilus-sendto-empathy
 
 %description
