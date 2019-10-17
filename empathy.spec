@@ -43,7 +43,6 @@ BuildRequires:	pkgconfig(gtk+-3.0) >= 3.0.2
 BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:	pkgconfig(libcanberra-gtk)
 BuildRequires:	pkgconfig(libcanberra-gtk3)
-BuildRequires:	pkgconfig(libnm-glib)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
