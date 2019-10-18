@@ -17,6 +17,7 @@ BuildRequires:	iso-codes
 BuildRequires:	yelp-tools
 BuildRequires:	pkgconfig(champlain-0.12)
 BuildRequires:	pkgconfig(champlain-gtk-0.12)
+BuildRequires:  pkgconfig(cheese)
 BuildRequires:	pkgconfig(cheese-gtk)
 BuildRequires:	pkgconfig(clutter-1.0)
 BuildRequires:	pkgconfig(clutter-gtk-1.0)
