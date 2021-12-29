@@ -57,6 +57,7 @@ BuildRequires:	pkgconfig(telepathy-glib)
 BuildRequires:	pkgconfig(telepathy-logger-0.2)
 BuildRequires:	pkgconfig(webkit2gtk-4.0)
 BuildRequires:	pkgconfig(x11)
+BuildRequires:  pkgconfig(python2)
 
 Requires:	folks
 # anything in _datadir/glib-2.0/schemas/org.gnome.*.gschema.xml
