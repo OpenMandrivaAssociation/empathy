@@ -7,7 +7,7 @@ Version:	3.12.14
 Release:	8
 License:	LGPLv2+
 Group:		Networking/Instant messaging
-Url:		http://live.gnome.org/Empathy
+Url:		https://live.gnome.org/Empathy
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/empathy/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	glib2.0-common
