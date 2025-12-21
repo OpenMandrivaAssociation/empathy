@@ -10,6 +10,11 @@ Group:		Networking/Instant messaging
 Url:		https://live.gnome.org/Empathy
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/empathy/%{url_ver}/%{name}-%{version}.tar.xz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	glib2.0-common
 BuildRequires:	intltool
 BuildRequires:	itstool
